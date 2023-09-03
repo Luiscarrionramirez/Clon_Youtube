@@ -48,7 +48,6 @@ const VideoDetail = () => {
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"  
               controls
-              onReady="true"
             />
             {/* Reproductor de video */}
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
