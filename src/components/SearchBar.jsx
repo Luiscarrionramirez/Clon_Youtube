@@ -52,7 +52,7 @@ const SearchBar = () => {
       {/* Botón de búsqueda */}
       <IconButton 
         type="submit"
-        sx={{ p:"10px", color: "red" }}
+        sx={{ p: { sm: "5px", md:"10px" }, color: "red" }}
       >
         {/* Icono de búsqueda */}
         <Search />
