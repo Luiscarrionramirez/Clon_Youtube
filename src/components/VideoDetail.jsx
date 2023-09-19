@@ -49,7 +49,15 @@ const VideoDetail = () => {
               className="react-player"  
               controls
             />
-            {/* Reproductor de video */}
+
+      {loading ? ( 
+         <p>Cargando...</p> 
+       ) : error ? ( 
+         <p>{error}</p> 
+       ) : ( 
+         <WeatherMainInfo weather={weather} /> 
+       )}      
+      {/* Reproductor de video */}
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
               {title}
             </Typography>
