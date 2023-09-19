@@ -10,6 +10,7 @@ import { fetchFromAPI } from "../utils/fetchFromAPI"
 const VideoDetail = () => {
   // Estado para almacenar los detalles del video
   const [videoDetail, setVideoDetail] = useState(null);
+
   
   // Estado para almacenar videos relacionados
   const [videos, setVideos] = useState(null);
@@ -22,6 +23,7 @@ const VideoDetail = () => {
     // Realiza una solicitud a la API para obtener detalles del video
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
       .then((data) => setVideoDetail(data.items[0]))
+      
 
     // Realiza una solicitud a la API para obtener videos relacionados al video actual
     fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
@@ -48,15 +50,7 @@ const VideoDetail = () => {
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"  
               controls
-            />
-
-      {loading ? ( 
-         <p>Cargando...</p> 
-       ) : error ? ( 
-         <p>{error}</p> 
-       ) : ( 
-         <WeatherMainInfo weather={weather} /> 
-       )}      
+            />    
       {/* Reproductor de video */}
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
               {title}
